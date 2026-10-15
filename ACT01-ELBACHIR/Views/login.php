@@ -19,9 +19,11 @@
 </body>
 </html>
 <?php
+require_once  __DIR__.'Controller/Controller.php';
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
 if(isset($_POST['Login']) && isset($_POST['email'])){
-   
+
   $email = $_POST['email'] ; 
   $pass =$_POST['pass'] ;
 
@@ -34,7 +36,7 @@ if(isset($_POST['Login']) && isset($_POST['email'])){
   
   echo 'LOGIN OK';
   header('location: dashboard.php');
-
+  
   }else{
 
    echo "Ingresa los campos para registarrse" ;  
