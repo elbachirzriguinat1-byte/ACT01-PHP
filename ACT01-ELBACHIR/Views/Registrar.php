@@ -27,6 +27,9 @@
 </body>
 </html>
 <?php
+
+require('../Controller/Controller.php');
+
 if($_SERVER['REQUEST_METHOD']=='POST'){
 if(isset($_POST['nom']) && isset($_POST['cognom']) && isset($_POST['email']) && isset($_POST['pass'])){
   $nom = $_POST['nom']; 

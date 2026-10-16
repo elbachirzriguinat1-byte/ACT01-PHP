@@ -9,5 +9,28 @@
     <h2>
         dashboard
     </h2>
+
+    <nav>
+        <a href="logout.php">Cerrar session</a>
+    </nav>
+
+    <div>
+        <a href="GestionUsuarios.php">Gestionar Usuarios </a>
+    </div>
 </body>
 </html>
+
+
+<?php 
+//require('Controller/Controller.php');
+require('../Controller/Controller.php');
+
+session_start() ;
+
+if(!isset($_SESSION['email'])){
+    header('location: login.php');
+}
+$email= $_SESSION['email']; 
+echo "Email : ".$email;
+
+?>

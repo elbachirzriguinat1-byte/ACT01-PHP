@@ -19,7 +19,7 @@
 </body>
 </html>
 <?php
-require_once  __DIR__.'Controller/Controller.php';
+require('../Controller/Controller.php');
 
 if($_SERVER['REQUEST_METHOD']=='POST'){
 if(isset($_POST['Login']) && isset($_POST['email'])){
@@ -29,12 +29,15 @@ if(isset($_POST['Login']) && isset($_POST['email'])){
 
   $pass_encryptado = password_hash($pass,PASSWORD_DEFAULT); 
 
-  echo "  passwordCrytp : ".$pass_encryptado; 
+  echo "  passwordCrytp : ".$pass_encryptado."<br>"; 
    
   if(!empty($email) && !empty($pass)){
   session_start() ; 
-  
-  echo 'LOGIN OK';
+  $_SESSION['email']=$email; 
+  $_SESSION['pass']=$pass_encryptado;
+  echo 'LOGIN OK'; 
+
+
   header('location: dashboard.php');
   
   }else{
