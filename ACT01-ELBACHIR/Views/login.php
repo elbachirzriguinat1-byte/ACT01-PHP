@@ -33,6 +33,7 @@ if(isset($_POST['Login']) && isset($_POST['email'])){
    
   if(!empty($email) && !empty($pass)){
   session_start() ; 
+  
   $_SESSION['email']=$email; 
   $_SESSION['pass']=$pass_encryptado;
   echo 'LOGIN OK'; 

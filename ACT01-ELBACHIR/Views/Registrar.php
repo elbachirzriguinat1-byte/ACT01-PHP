@@ -21,7 +21,14 @@
     <br>
     <label for="">Password</label><br>
     <input type="password" name="pass"><br>
-    <input type="submit" name="register">
+    <br>
+    <label for="">Rol</label>
+    <select name="Rol" id="">
+        <option value="Admin">Administrador</option>
+        <option value="Usuario_Normal">Usuario Normal</option>
+    </select><br>
+    <br><input type="submit" name="register">
+
     </form>
 
 </body>
